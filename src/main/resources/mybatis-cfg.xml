@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!--  <typeAlias type="cn.csg.gdhy.testspring.model.Product" alias="product"/> -->
+		<package name="com.ceylonchina.stock.model"/>
+	</typeAliases>
+  <mappers>
+  <!--
+  	<mapper resource="cn/csg/gdhy/testspring/dao/ProductDao.xml"/>
+  	-->
+  	<package name="com.ceylonchina.stock.dao"/>
+  </mappers>
+</configuration>

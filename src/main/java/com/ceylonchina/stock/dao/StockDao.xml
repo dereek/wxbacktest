@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ceylonchina.stock.dao.StockDao">
+	<resultMap type="" id="stockRs">
+		<id property="id" column="id"/>
+		<result property="name" column="stock"/>
+	</resultMap>
+	<select id="getById" parameterType="string" resultMap="stockRs">
+		select * from stock where id=#{id}
+	</select>
+	
+	<select id="getStockListByUserName" parameterType="string" resultMap="com.ceylonchina.stock.model.Stock">
+		select s.id, s.stock from user u, stockmap m, stock s  where m.user = u.uid 
+		and m.stock = s.id and u.username=#{username}
+	</select>
+</mapper>
